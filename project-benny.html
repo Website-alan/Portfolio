@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benny Stores POS | Portfolio</title>
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body style="background: var(--bg-color); color: var(--text-primary); padding: 5rem 10%; font-family: 'Inter', sans-serif;">
+    <a href="index.html" class="btn secondary-btn" style="margin-bottom: 2rem; display: inline-block; padding: 0.5rem 1.5rem; text-decoration: none;">&larr; Back to Portfolio</a>
+    
+    <h1 class="section-title" style="margin-bottom: 1.5rem;">Benny Stores POS / Credit System</h1>
+    
+    <div class="glass-panel" style="margin-bottom: 3rem;">
+        <img src="benny_logo.png" alt="Benny Stores Interface" style="width: 100%; max-height: 400px; object-fit: contain; background: rgba(0,0,0,0.2); border-radius: 12px; margin-bottom: 2rem; border: 1px solid var(--glass-border);">
+        <h2 style="font-family: 'Outfit', sans-serif; margin-bottom: 1rem; color: var(--accent-color); font-size: 1.8rem;">Project Overview</h2>
+        <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary);">
+          A full-featured Point-of-Sale (POS) and Credit Management software system built natively for desktop using the Python Django framework. Designed specifically to handle dynamic retail store operations, robust inventory management, complex customer credit systems (informal ledgers/khatta), and daily financial reconciliation.
+        </p>
+        
+        <h2 style="font-family: 'Outfit', sans-serif; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--accent-color); font-size: 1.8rem;">Key Features</h2>
+        <ul style="margin-left: 1.5rem; line-height: 1.8; color: var(--text-secondary); font-size: 1.05rem;">
+            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Ledger & CRM:</strong> Complete tracking of customer credit, vendor payouts, and automated global dashboards.</li>
+            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Inventory Management:</strong> Track target stock, low stock thresholds with automated alerts, and full stock movement logs.</li>
+            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Dynamic POS & Billing:</strong> Fast JS-powered checkout interface with partial payment accounting. Unpaid balances automatically sync to the customer's ledger.</li>
+            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Accounts & Cashflow:</strong> Advanced bucket-tracking (Cash Drawer, UPI, Bank) and enforced daily opening/closing reconciliation.</li>
+            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Automated Backups & Security:</strong> Immutable localized daily backups via customized Python launcher scripts and role-based action tracking.</li>
+        </ul>
+
+        <h2 style="font-family: 'Outfit', sans-serif; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--accent-color); font-size: 1.8rem;">Tech Stack</h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+          <span style="background: rgba(157, 78, 221, 0.2); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500; font-size: 0.9rem; border: 1px solid rgba(157, 78, 221, 0.4);">Python 3</span>
+          <span style="background: rgba(157, 78, 221, 0.2); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500; font-size: 0.9rem; border: 1px solid rgba(157, 78, 221, 0.4);">Django Framework</span>
+          <span style="background: rgba(157, 78, 221, 0.2); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500; font-size: 0.9rem; border: 1px solid rgba(157, 78, 221, 0.4);">SQLite3</span>
+          <span style="background: rgba(157, 78, 221, 0.2); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500; font-size: 0.9rem; border: 1px solid rgba(157, 78, 221, 0.4);">Vanilla JS & HTML/CSS</span>
+          <span style="background: rgba(157, 78, 221, 0.2); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500; font-size: 0.9rem; border: 1px solid rgba(157, 78, 221, 0.4);">Chart.js</span>
+        </div>
+    </div>
+  </body>
+</html>
