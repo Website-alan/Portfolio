@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upcoming AI Projects | Portfolio</title>
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      .badge {
+        padding: 0.35rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-left: 1rem;
+        display: inline-block;
+        vertical-align: middle;
+        font-family: 'Inter', sans-serif;
+      }
+      .badge-working { background: rgba(0, 255, 170, 0.15); color: #00ffaa; border: 1px solid rgba(0, 255, 170, 0.4); }
+      .badge-pending { background: rgba(255, 170, 0, 0.15); color: #ffaa00; border: 1px solid rgba(255, 170, 0, 0.4); }
+      .badge-planned { background: rgba(157, 78, 221, 0.15); color: #c77dff; border: 1px solid rgba(157, 78, 221, 0.4); }
+      
+      .project-item { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--glass-border); }
+      .project-item:last-child { border-bottom: none; }
+    </style>
+  </head>
+  <body style="background: var(--bg-color); color: var(--text-primary); padding: 5rem 10%; font-family: 'Inter', sans-serif;">
+    <a href="index.html" class="btn secondary-btn" style="margin-bottom: 2rem; display: inline-block; padding: 0.5rem 1.5rem; text-decoration: none;">&larr; Back to Portfolio</a>
+    
+    <h1 class="section-title" style="margin-bottom: 1.5rem;">Upcoming Project Pipeline</h1>
+    
+    <div class="glass-panel" style="margin-bottom: 3rem;">
+        <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 3.5rem;">
+          These are the next-generation applications currently in my engineering pipeline. Expanding on previous operational, financial, and management software, these projects integrate powerful Artificial Intelligence to solve complex productivity and operational challenges.
+        </p>
+
+        <div class="project-item">
+            <h2 style="font-family: 'Outfit'; color: var(--accent-color); font-size: 1.6rem; display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                Intelligent Travel Itinerary Planner 
+                <span class="badge badge-working">Working</span>
+            </h2>
+            <p style="margin-top: 1rem; color: var(--text-secondary); line-height: 1.6; font-size: 1.05rem;">A collaborative, drag-and-drop travel dashboard. A user inputs destination parameters (e.g., "Tokyo, 5 days, food and history"). The system utilizes Generative AI APIs to output a complete, day-by-day customized schedule integrated with interactive maps, estimated transit times, and dynamic costs calculations.</p>
+        </div>
+
+        <div class="project-item">
+            <h2 style="font-family: 'Outfit'; color: var(--accent-color); font-size: 1.6rem; display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                AI-Powered Study & Quiz Generator
+                <span class="badge badge-pending">Pending</span>
+            </h2>
+            <p style="margin-top: 1rem; color: var(--text-secondary); line-height: 1.6; font-size: 1.05rem;">An educational platform where users upload a PDF of a textbook chapter or their lecture notes. The application automatically triggers an LLM ingestion pipeline to generate a custom exam, interactive flashcards, and a study guide, turning raw text into a directly actionable learning curriculum.</p>
+        </div>
+
+        <div class="project-item">
+            <h2 style="font-family: 'Outfit'; color: var(--accent-color); font-size: 1.6rem; display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                Automated Code Reviewer & Documenter
+                <span class="badge badge-planned">Planned</span>
+            </h2>
+            <p style="margin-top: 1rem; color: var(--text-secondary); line-height: 1.6; font-size: 1.05rem;">A productivity tool designed to augment software engineering. By pasting a block of logic or linking a repository context, the AI engine instantly analyzes the codebase for security vulnerabilities, prompts performance improvements, and generates comprehensive architectural documentation (`README.md`).</p>
+        </div>
+    </div>
+  </body>
+</html>
