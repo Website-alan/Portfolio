@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | 3D Experience</title>
+    <title>Portfolio | ALAN BENNY</title>
     <!-- Modern Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,24 +32,31 @@
     
     <!-- UI Overlay -->
     <div id="app">
+      <!-- Side Visual Elements (Revealed from About Section onwards) -->
+      <div class="side-visuals">
+        <div class="visual-portrait-left">
+          <img src="assets/profile/Alan Benny.png" alt="Profile Background">
+        </div>
+        <div class="visual-hologram-right">
+          <div class="scan-bar"></div>
+        </div>
+      </div>
       <nav class="navbar">
         <div class="logo">
-          <img src="Alan Benny.png" alt="Logo" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; vertical-align: middle; margin-right: 12px; border: 2px solid var(--accent-color);">
+          <img src="assets/profile/Alan Benny.png" alt="Logo" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; vertical-align: middle; margin-right: 12px; border: 2px solid var(--accent-color);">
           Portfolio
         </div>
         <div class="nav-links">
           <a href="#expertise">Expertise</a>
           <a href="#projects">Projects</a>
+          <a href="#branding">Branding</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
 
       <main class="content">
         <section id="hero" class="section">
-          <!-- Melted Background Profile Photo -->
-          <img src="Alan Benny.png" alt="Profile Background" class="hero-background-photo">
-
-          <div class="hero-content">
+           <div class="hero-content">
             <p class="hero-name" style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">Hi, I'm <span class="accent">Alan Benny</span>.</p>
             <h2 class="subtitle">Welcome to my universe</h2>
             <h1 class="title">
@@ -99,6 +106,7 @@
                 </div>
                 <h3>Designer</h3>
                 <p>Crafting premium visual assets and brand identities utilizing Adobe Photoshop, Illustrator, and specialized physical design mediums like Embroidery.</p>
+                <a href="projects.html#creative" class="accent-link" style="font-size: 0.8rem; text-decoration: none; margin-top: 1rem; display: inline-block;">View Design Gallery &rarr;</a>
               </div>
 
               <div class="expertise-card glass-panel" data-tilt>
@@ -107,13 +115,15 @@
                 </div>
                 <h3>Digital Marketer</h3>
                 <p>Driving user acquisition and product growth through data-driven SEO strategies, active campaign analytics, and conversion optimization.</p>
+                <a href="projects.html#creative" class="accent-link" style="font-size: 0.8rem; text-decoration: none; margin-top: 1rem; display: inline-block;">View Case Studies &rarr;</a>
               </div>
 
             </div>
           </div>
         </section>
-
-
+ 
+        </section>
+ 
         <section id="about" class="section">
           <div class="container">
             <h2 class="section-title">About Me</h2>
@@ -121,7 +131,7 @@
               <p style="font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">I am a multi-disciplinary developer and designer specializing in creating highly interactive and performant web experiences. With a strong foundation in modern Python backend architectures, sophisticated Vanilla JavaScript interactions, and premium glassmorphic UI design, I blur the line between deep technical utility and digital art.</p>
               <p style="font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.8;">Beyond code, I am an experienced digital marketer. I integrate SEO strategies and conversion funnel analytics directly into my applications to guarantee that the products I build don't just work flawlessly—they reach the right audience and convert users efficiently.</p>
               <div class="about-cta">
-                <a href="Alan_Benny_Resume.pdf" class="btn primary-btn resume-btn" style="display: inline-flex; align-items: center; gap: 10px;">
+                <a href="assets/docs/Alan_Benny_Resume.pdf" class="btn primary-btn resume-btn" style="display: inline-flex; align-items: center; gap: 10px;">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                   Download Resume
                 </a>
@@ -176,32 +186,65 @@
 
         <section id="projects" class="section">
           <div class="container">
-            <h2 class="section-title">Selected Works</h2>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem;">
+              <h2 class="section-title" style="margin-bottom: 0;">Selected Works</h2>
+              <a href="projects.html" class="accent-link" style="text-decoration: none; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">View All Projects &rarr;</a>
+            </div>
             <div class="projects-grid">
-              <div class="project-card glass-panel">
+              <div class="project-card glass-panel" style="--thumb: url('assets/bsms/bsms_dashboard.png');">
+                <div class="card-thumbnail" style="background-image: var(--thumb);"></div>
+                <div class="card-glow"></div>
                 <div class="project-overlay">
-                  <h3>Benny Stores</h3>
-                  <p>Credit & Inventory Management System</p>
+                  <h3>Benny Stores (BSMS)</h3>
+                  <p>POS & Inventory Management System</p>
                   <a href="project-benny.html" class="btn primary-btn btn-sm">View Project</a>
                 </div>
               </div>
-              <div class="project-card glass-panel">
+              <div class="project-card glass-panel" style="--thumb: url('assets/bscms/bscms_dashboard.png');">
+                <div class="card-thumbnail" style="background-image: var(--thumb);"></div>
+                <div class="card-glow"></div>
                 <div class="project-overlay">
-                  <h3>FinanceTrack</h3>
-                  <p>Group Expensing & Settlement Algorithm</p>
-                  <a href="project-finance.html" class="btn primary-btn btn-sm">View Project</a>
+                  <h3>BSCMS</h3>
+                  <p>Credit Management & Financial Audit System</p>
+                  <a href="project-bscms.html" class="btn primary-btn btn-sm">View Project</a>
                 </div>
               </div>
-              <div class="project-card glass-panel">
+              <div class="project-card glass-panel" style="--thumb: url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2832&auto=format&fit=crop');">
+                <div class="card-thumbnail" style="background-image: var(--thumb);"></div>
+                <div class="card-glow"></div>
                 <div class="project-overlay">
                   <h3>Upcoming Projects</h3>
                   <p>Next-Gen Applications built with AI Assistance</p>
-                  <a href="project-upcoming.html" class="btn primary-btn btn-sm">View Pipeline</a>
+                  <a href="project-upcoming.html" class="btn primary-btn btn-sm">Check Pipeline Status</a>
                 </div>
               </div>
             </div>
           </div>
         </section>
+        <section id="branding" class="section">
+          <div class="container">
+            <h2 class="section-title">Brand Identity</h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; margin-top: -1.5rem;">Interactive showcase of minimalist and luxury brand concepts.</p>
+            <div class="logo-grid" id="logoGrid">
+              <div class="logo-item glass-panel">
+                <img src="assets/branding/benny_logo.png" alt="Benny Logo Original">
+              </div>
+              <div class="logo-item glass-panel">
+                <img src="assets/branding/designWorks/benny_stores_gold_logo.png" alt="Benny Stores Luxury Gold">
+              </div>
+              <div class="logo-item glass-panel">
+                <img src="assets/branding/designWorks/benny_stores_3d_logo.png" alt="Benny Stores 3D Concept">
+              </div>
+              <div class="logo-item glass-panel">
+                <img src="assets/branding/designWorks/benny_stores_icon.png" alt="Benny Stores Icon System">
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+              <a href="projects.html#creative" class="accent-link" style="text-decoration: none;">View Full Creative Archive &rarr;</a>
+            </div>
+          </div>
+        </section>
+
 
         <section id="contact" class="section">
           <div class="container">

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Archive | Alan Benny</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      .archive-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 5rem 5%;
+      }
+      .back-nav {
+        margin-bottom: 3rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+      .back-nav:hover { color: var(--accent-color); }
+      
+      .archive-header {
+        margin-bottom: 5rem;
+      }
+      .archive-header h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        margin-bottom: 1rem;
+        background: linear-gradient(90deg, #fff, var(--accent-color));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Custom styles for smaller cards on this page if needed */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+
+      .status-tag {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        background: rgba(12, 235, 235, 0.2);
+        color: #0cebeb;
+        border: 1px solid rgba(12, 235, 235, 0.4);
+      }
+      .status-tag.wip {
+        background: rgba(255, 165, 0, 0.1);
+        color: orange;
+        border-color: rgba(255, 165, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-follower"></div>
+
+    <!-- 3D Canvas Background (Optional for consistency, even if empty) -->
+    <canvas class="webgl"></canvas>
+
+    <div id="app">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+            <img src="assets/profile/Alan Benny.png" alt="Logo" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; vertical-align: middle; margin-right: 12px; border: 2px solid var(--accent-color);">
+            Portfolio
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="index.html#expertise">Expertise</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#branding">Branding</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </nav>
+
+      <main class="content">
+        <div class="archive-container">
+          <a href="index.html" class="back-nav">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Back to Home
+          </a>
+          
+          <header class="archive-header">
+            <h1>Project Archive</h1>
+            <p class="subtitle" style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px;">A comprehensive vault of my software engineering builds, UI/UX design case studies, and strategic digital marketing campaigns.</p>
+          </header>
+
+          <!-- SECTION 1: SOFTWARE ENGINEERING -->
+          <h2 style="margin-bottom: 2.5rem; color: var(--accent-color); font-family: 'Outfit';">01. Software Engineering</h2>
+          <div class="projects-grid" style="margin-bottom: 6rem;">
+            <!-- Project 1 -->
+            <div class="project-card glass-panel" style="--thumb: url('assets/bsms/bsms_dashboard.png');">
+              <div class="card-thumbnail" style="background-image: var(--thumb);"></div>
+              <div class="card-glow"></div>
+              <span class="status-tag">Live</span>
+              <div class="project-overlay">
+                <h3>Benny Stores (BSMS)</h3>
+                <p>Advanced Point-of-Sale & Inventory system build on Django.</p>
+                <a href="project-benny.html" class="btn primary-btn btn-sm">Technical Case Study</a>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card glass-panel" style="--thumb: url('assets/bscms/bscms_dashboard.png');">
+              <div class="card-thumbnail" style="background-image: var(--thumb);"></div>
+              <div class="card-glow"></div>
+              <span class="status-tag">Live</span>
+              <div class="project-overlay">
+                <h3>BSCMS</h3>
+                <p>Financial Audit & Credit Tracking system with regional localization.</p>
+                <a href="project-bscms.html" class="btn primary-btn btn-sm">Technical Case Study</a>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card glass-panel" style="--thumb: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2940&auto=format&fit=crop');">
+              <div class="card-thumbnail" style="background-image: var(--thumb);"></div>
+              <div class="card-glow"></div>
+              <span class="status-tag wip">Work In Progress</span>
+              <div class="project-overlay">
+                <h3>FinanceTrack</h3>
+                <p>Settlement algorithm and personal wallet engine (Alpha Build).</p>
+                <a href="project-finance.html" class="btn primary-btn btn-sm">View Internal Specs</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: VISUAL & STRATEGIC CREATIVE -->
+          <h2 id="creative" style="margin-bottom: 2.5rem; color: var(--accent-color); font-family: 'Outfit';">02. Visual & Strategic Creative</h2>
+          <div class="projects-grid">
+            <!-- Design Project 1 -->
+            <div class="project-card glass-panel" style="--thumb: url('https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=2940&auto=format&fit=crop');">
+              <div class="card-thumbnail" style="background-image: var(--thumb);"></div>
+              <div class="card-glow"></div>
+              <span class="status-tag" style="background: rgba(157, 78, 221, 0.2); color: #c77dff; border-color: rgba(157, 78, 221, 0.4);">UI/UX</span>
+              <div class="project-overlay">
+                <h3>SmartHome Pro</h3>
+                <p>User Interface design for a centralized IoT household controller.</p>
+                <a href="#" class="btn secondary-btn btn-sm" style="pointer-events: none;">Mockups Coming Soon</a>
+              </div>
+            </div>
+
+            <!-- Marketing Project 1 -->
+            <div class="project-card glass-panel" style="--thumb: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop');">
+              <div class="card-thumbnail" style="background-image: var(--thumb);"></div>
+              <div class="card-glow"></div>
+              <span class="status-tag" style="background: rgba(0, 255, 170, 0.2); color: #00ffaa; border-color: rgba(0, 255, 170, 0.4);">Marketing</span>
+              <div class="project-overlay">
+                <h3>E-commerce SEO Growth</h3>
+                <p>A data-driven strategy achieving 300% growth in organic retail traffic.</p>
+                <a href="#" class="btn secondary-btn btn-sm" style="pointer-events: none;">Case Study Coming Soon</a>
+              </div>
+            </div>
+
+            <!-- Design Project 2 -->
+            <div class="project-card glass-panel" style="--thumb: url('https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2942&auto=format&fit=crop');">
+              <div class="card-thumbnail" style="background-image: var(--thumb);"></div>
+              <div class="card-glow"></div>
+              <span class="status-tag" style="background: rgba(157, 78, 221, 0.2); color: #c77dff; border-color: rgba(157, 78, 221, 0.4);">Branding</span>
+              <div class="project-overlay">
+                <h3>Nebula Identity</h3>
+                <p>Complete brand identity including logo, typography, and color systems.</p>
+                <a href="#" class="btn secondary-btn btn-sm" style="pointer-events: none;">Assets Coming Soon</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 3: BRAND IDENTITY -->
+          <section class="brand-section">
+            <h2 style="margin-bottom: 2.5rem; color: var(--accent-color); font-family: 'Outfit';">03. Brand Identity</h2>
+            <div class="logo-grid" id="logoGrid">
+              <div class="logo-item glass-panel">
+                <img src="assets/branding/benny_logo.png" alt="Benny Logo Original">
+              </div>
+              <div class="logo-item glass-panel">
+                <img src="assets/branding/designWorks/benny_stores_gold_logo.png" alt="Benny Stores Luxury Gold">
+              </div>
+              <div class="logo-item glass-panel">
+                <img src="assets/branding/designWorks/benny_stores_3d_logo.png" alt="Benny Stores 3D Concept">
+              </div>
+              <div class="logo-item glass-panel">
+                <img src="assets/branding/designWorks/benny_stores_icon.png" alt="Benny Stores Icon System">
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- AI Assistant Orb & Chat -->
+    <div id="aiOrb" class="ai-orb">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+      <div class="orb-pulse"></div>
+    </div>
+
+    <div id="aiChatWindow" class="ai-chat-window glass-panel" style="display: none;">
+      <div class="chat-header">
+        <div class="header-left">
+          <div class="status-dot"></div>
+          <h4>Alan-AI</h4>
+        </div>
+        <button id="closeChat" class="close-chat-btn">&times;</button>
+      </div>
+      <div id="chatMessages" class="chat-messages">
+        <div class="message ai-message">
+          Hello! I am Alan's automated assistant. Ask me anything about his skills, projects, or how to contact him.
+        </div>
+      </div>
+      <form id="chatForm" class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="Ask about Python, marketing..." required autocomplete="off">
+        <button type="submit" class="send-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- Import Maps -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://esm.sh/three@0.160.0",
+          "three/addons/": "https://esm.sh/three@0.160.0/examples/jsm/",
+          "gsap": "https://esm.sh/gsap@3.12.4",
+          "gsap/ScrollTrigger": "https://esm.sh/gsap@3.12.4/ScrollTrigger.js"
+        }
+      }
+    </script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

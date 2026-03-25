@@ -3,42 +3,338 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Benny Stores POS | Portfolio</title>
-    <!-- Modern Typography -->
+    <title>Benny Stores (BSMS) | Project Detail</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-  </head>
-  <body style="background: var(--bg-color); color: var(--text-primary); padding: 5rem 10%; font-family: 'Inter', sans-serif;">
-    <a href="index.html" class="btn secondary-btn" style="margin-bottom: 2rem; display: inline-block; padding: 0.5rem 1.5rem; text-decoration: none;">&larr; Back to Portfolio</a>
-    
-    <h1 class="section-title" style="margin-bottom: 1.5rem;">Benny Stores POS / Credit System</h1>
-    
-    <div class="glass-panel" style="margin-bottom: 3rem;">
-        <img src="benny_logo.png" alt="Benny Stores Interface" style="width: 100%; max-height: 400px; object-fit: contain; background: rgba(0,0,0,0.2); border-radius: 12px; margin-bottom: 2rem; border: 1px solid var(--glass-border);">
-        <h2 style="font-family: 'Outfit', sans-serif; margin-bottom: 1rem; color: var(--accent-color); font-size: 1.8rem;">Project Overview</h2>
-        <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary);">
-          A full-featured Point-of-Sale (POS) and Credit Management software system built natively for desktop using the Python Django framework. Designed specifically to handle dynamic retail store operations, robust inventory management, complex customer credit systems (informal ledgers/khatta), and daily financial reconciliation.
-        </p>
-        
-        <h2 style="font-family: 'Outfit', sans-serif; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--accent-color); font-size: 1.8rem;">Key Features</h2>
-        <ul style="margin-left: 1.5rem; line-height: 1.8; color: var(--text-secondary); font-size: 1.05rem;">
-            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Ledger & CRM:</strong> Complete tracking of customer credit, vendor payouts, and automated global dashboards.</li>
-            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Inventory Management:</strong> Track target stock, low stock thresholds with automated alerts, and full stock movement logs.</li>
-            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Dynamic POS & Billing:</strong> Fast JS-powered checkout interface with partial payment accounting. Unpaid balances automatically sync to the customer's ledger.</li>
-            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Accounts & Cashflow:</strong> Advanced bucket-tracking (Cash Drawer, UPI, Bank) and enforced daily opening/closing reconciliation.</li>
-            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Automated Backups & Security:</strong> Immutable localized daily backups via customized Python launcher scripts and role-based action tracking.</li>
-        </ul>
+    <style>
+      :root {
+        --accent-color: #0cebeb;
+        --glass-bg: rgba(255, 255, 255, 0.03);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --text-primary: #ffffff;
+        --text-secondary: rgba(255, 255, 255, 0.7);
+      }
 
-        <h2 style="font-family: 'Outfit', sans-serif; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--accent-color); font-size: 1.8rem;">Tech Stack</h2>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-          <span style="background: rgba(157, 78, 221, 0.2); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500; font-size: 0.9rem; border: 1px solid rgba(157, 78, 221, 0.4);">Python 3</span>
-          <span style="background: rgba(157, 78, 221, 0.2); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500; font-size: 0.9rem; border: 1px solid rgba(157, 78, 221, 0.4);">Django Framework</span>
-          <span style="background: rgba(157, 78, 221, 0.2); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500; font-size: 0.9rem; border: 1px solid rgba(157, 78, 221, 0.4);">SQLite3</span>
-          <span style="background: rgba(157, 78, 221, 0.2); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500; font-size: 0.9rem; border: 1px solid rgba(157, 78, 221, 0.4);">Vanilla JS & HTML/CSS</span>
-          <span style="background: rgba(157, 78, 221, 0.2); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500; font-size: 0.9rem; border: 1px solid rgba(157, 78, 221, 0.4);">Chart.js</span>
+      body {
+        background: #050508;
+        color: var(--text-primary);
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+      }
+
+      .project-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 6rem 5%;
+      }
+
+      .back-nav {
+        margin-bottom: 4rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        padding: 0.8rem 1.5rem;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 30px;
+        backdrop-filter: blur(10px);
+      }
+
+      .back-nav:hover { 
+        color: var(--accent-color);
+        transform: translateX(-10px);
+        border-color: var(--accent-color);
+        box-shadow: 0 0 20px rgba(12, 235, 235, 0.2);
+      }
+      
+      .project-hero {
+        margin-bottom: 6rem;
+        text-align: left;
+      }
+
+      .project-hero h1 {
+        font-family: 'Outfit', sans-serif;
+        font-size: clamp(3rem, 8vw, 5rem);
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+        background: linear-gradient(90deg, #fff, var(--accent-color), #8a3cdb);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      .main-snapshot-wrapper {
+        position: relative;
+        margin-bottom: 6rem;
+        border-radius: 24px;
+        padding: 8px;
+        background: linear-gradient(135deg, rgba(12, 235, 235, 0.3), transparent, rgba(138, 60, 219, 0.3));
+        overflow: hidden;
+      }
+
+      .main-snapshot {
+        width: 100%;
+        border-radius: 20px;
+        display: block;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+      }
+      
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+        margin-bottom: 6rem;
+      }
+
+      .feature-item {
+        padding: 2.5rem;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 24px;
+        backdrop-filter: blur(15px);
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .feature-item:hover { 
+        transform: translateY(-12px) scale(1.02); 
+        border-color: rgba(12, 235, 235, 0.4);
+        background: rgba(12, 235, 235, 0.05);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      }
+
+      .feature-item h3 { 
+        font-family: 'Outfit';
+        font-size: 1.5rem;
+        color: var(--accent-color); 
+        margin-bottom: 1rem; 
+      }
+      
+      .gallery-section {
+        margin-bottom: 6rem;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 3rem;
+      }
+
+      @media (max-width: 768px) {
+        .gallery-grid { grid-template-columns: 1fr; }
+      }
+
+      .gallery-item {
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid var(--glass-border);
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+
+      .gallery-item:hover img { transform: scale(1.08); }
+
+      .gallery-caption {
+        padding: 1.5rem 2rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        color: var(--text-secondary);
+        background: rgba(0,0,0,0.3);
+        border-top: 1px solid var(--glass-border);
+      }
+      
+      .tech-pills {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .pill {
+        background: rgba(12, 235, 235, 0.05);
+        border: 1px solid rgba(12, 235, 235, 0.2);
+        padding: 0.6rem 1.4rem;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--accent-color);
+        transition: all 0.3s;
+      }
+
+      .pill:hover {
+        background: var(--accent-color);
+        color: #000;
+        box-shadow: 0 0 15px var(--accent-color);
+      }
+
+      .demo-video-container {
+        margin-top: 5rem;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid var(--glass-border);
+        box-shadow: 0 0 40px rgba(12, 235, 235, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-follower"></div>
+
+    <canvas class="webgl"></canvas>
+
+    <div id="app">
+      <nav class="navbar" style="background: rgba(5,5,8,0.8); backdrop-filter: blur(10px);">
+        <div class="logo">
+          <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+            <img src="assets/profile/Alan Benny.png" alt="Logo" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; vertical-align: middle; margin-right: 12px; border: 2px solid var(--accent-color);">
+            Portfolio
+          </a>
         </div>
+        <div class="nav-links">
+          <a href="index.html#expertise">Expertise</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#branding">Branding</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </nav>
+
+      <main class="content">
+        <div class="project-container">
+          <a href="projects.html" class="back-nav">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Back to Archive
+          </a>
+          
+          <header class="project-hero">
+            <h1>Benny Stores (BSMS)</h1>
+            <p class="subtitle" style="max-width: 800px; margin: 0 auto;">Developed a full-featured retail management system using Python and Django. Integrated a dynamic point-of-sale interface with automated ledger updates, real-time stock tracking, and advanced financial reconciliation.</p>
+          </header>
+          
+          <div class="main-snapshot-wrapper reveal-item">
+            <img src="assets/bsms/bsms_dashboard.png" alt="BSMS Dashboard" class="main-snapshot" data-tilt>
+          </div>
+          
+          <section class="details glass-panel reveal-item" style="margin-bottom: 5rem; padding: 4rem;">
+            <h2 style="margin-bottom: 2rem; color: var(--accent-color); font-family: 'Outfit'; font-size: 2rem;">Overview</h2>
+            <p style="color: var(--text-secondary); font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
+              **Benny Stores Management System (BSMS)** is a high-performance retail engine built on the Django Framework. It bridges the gap between digital efficiency and real-time inventory tracking, ensuring 100% stock accuracy and financial transparency for modern retail.
+            </p>
+            
+            <div class="tech-pills">
+              <span class="pill">Python 3</span>
+              <span class="pill">Django Framework</span>
+              <span class="pill">SQL Micro-Architecture</span>
+              <span class="pill">Vanilla JS</span>
+              <span class="pill">Holographic CSS3</span>
+              <span class="pill">Chart.js Analytics</span>
+              <span class="pill">Standalone Runtime</span>
+            </div>
+          </section>
+
+          <section class="feature-grid">
+            <div class="feature-item reveal-item">
+              <h3>📊 Real-time Dashboard</h3>
+              <p>Instant financial overviews including today's sales, expenses, and estimated profit via heavy data-aggregation scripts.</p>
+            </div>
+            <div class="feature-item reveal-item">
+              <h3>🛒 Smart POS</h3>
+              <p>Dynamic billing interface with multi-payment support and high-performance client ledger synchronization.</p>
+            </div>
+            <div class="feature-item reveal-item">
+              <h3>📋 Centralized Ledger</h3>
+              <p>Complete tracking of customer credit and vendor balances with automated debt-settlement algorithms.</p>
+            </div>
+            <div class="feature-item reveal-item">
+              <h3>📦 Inventory Control</h3>
+              <p>Live stock tracking with low-inventory alerts and comprehensive movement history for every product variant.</p>
+            </div>
+          </section>
+
+          <section class="gallery-section">
+            <h2 style="margin-bottom: 3.5rem; text-align: left; font-family: 'Outfit'; font-size: 2.5rem; color: var(--accent-color);">Technical Interface</h2>
+            <div class="gallery-grid">
+              <div class="gallery-item reveal-item">
+                <img src="assets/bsms/bsms_pos.png" alt="POS Interface">
+                <div class="gallery-caption">Dynamic Billing Engine</div>
+              </div>
+              <div class="gallery-item reveal-item">
+                <img src="assets/bsms/bsms_inventory.png" alt="Inventory List">
+                <div class="gallery-caption">Advanced Product & Variant Architecture</div>
+              </div>
+              <div class="gallery-item reveal-item">
+                <img src="assets/bsms/bsms_ledger.png" alt="Party Ledger">
+                <div class="gallery-caption">Unified Ledger & Relationship Tracking</div>
+              </div>
+              <div class="gallery-item reveal-item">
+                <img src="assets/bsms/bsms_accounts.png" alt="Accounts Summary">
+                <div class="gallery-caption">Financial Health Intelligence</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="video-preview" style="text-align: left;">
+            <h2 style="margin-bottom: 2rem; font-family: 'Outfit'; font-size: 2.5rem; color: var(--accent-color);">System Demonstration</h2>
+            <div class="demo-video-container reveal-item">
+              <img src="assets/bsms/bsms_demo.webp" alt="Project Demo Video Walkthrough" style="width: 100%; display: block;">
+            </div>
+            <p style="margin-top: 2rem; color: var(--text-secondary); font-size: 1.1rem;">A technical walkthrough of the BSMS deployment and interface logic.</p>
+          </section>
+        </div>
+      </main>
     </div>
+
+    <!-- AI Assistant Orb & Chat -->
+    <div id="aiOrb" class="ai-orb">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+      <div class="orb-pulse"></div>
+    </div>
+
+    <div id="aiChatWindow" class="ai-chat-window glass-panel" style="display: none;">
+      <div class="chat-header">
+        <div class="header-left">
+          <div class="status-dot"></div>
+          <h4>Alan-AI</h4>
+        </div>
+        <button id="closeChat" class="close-chat-btn">&times;</button>
+      </div>
+      <div id="chatMessages" class="chat-messages">
+        <div class="message ai-message">
+          Hello! I am Alan's automated assistant. Ask me anything about his skills, projects, or how to contact him.
+        </div>
+      </div>
+      <form id="chatForm" class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="Ask about Python, marketing..." required autocomplete="off">
+        <button type="submit" class="send-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- Import Maps -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://esm.sh/three@0.160.0",
+          "three/addons/": "https://esm.sh/three@0.160.0/examples/jsm/",
+          "gsap": "https://esm.sh/gsap@3.12.4",
+          "gsap/ScrollTrigger": "https://esm.sh/gsap@3.12.4/ScrollTrigger.js"
+        }
+      }
+    </script>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
+
