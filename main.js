@@ -466,18 +466,27 @@ function appendMessage(text, sender) {
   if (!chatMessages) return;
   const msgDiv = document.createElement('div');
   msgDiv.className = `message ${sender}-message`;
-  msgDiv.innerHTML = text;
+  
+  // Use textContent for user messages to prevent XSS
+  if (sender === 'user') {
+    msgDiv.textContent = text;
+  } else {
+    // AI responses can use innerHTML if they contain formatting, 
+    // but they are fixed strings from our knowledge base.
+    msgDiv.innerHTML = text;
+  }
+  
   chatMessages.appendChild(msgDiv);
   chatMessages.scrollTop = chatMessages.scrollHeight;
   return msgDiv;
 }
 
 function typeWriter(element, text, speed = 25) {
-  element.innerHTML = "";
+  element.textContent = "";
   let i = 0;
   function type() {
     if (i < text.length) {
-      element.innerHTML += text.charAt(i);
+      element.textContent += text.charAt(i);
       i++;
       if (chatMessages) chatMessages.scrollTop = chatMessages.scrollHeight;
       setTimeout(type, speed);
