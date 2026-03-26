@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Resume | ALAN BENNY</title>
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://esm.sh/ 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'self' https://esm.sh/; frame-src 'self';">
+    
+    <style>
+      :root {
+        --accent-color: #0cebeb;
+        --secondary-accent: #c77dff;
+        --glass-bg: rgba(255, 255, 255, 0.03);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --text-primary: #ffffff;
+        --text-secondary: rgba(255, 255, 255, 0.7);
+      }
+
+      body {
+        background: #050508;
+        color: var(--text-primary);
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+      }
+
+      .resume-container {
+        max-width: 1000px;
+        margin: 5rem auto;
+        padding: 4rem 5%;
+        position: relative;
+        z-index: 10;
+      }
+
+      .back-btn {
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
+        z-index: 100;
+        padding: 0.8rem 1.5rem;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 30px;
+        color: var(--text-secondary);
+        text-decoration: none;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+
+      .back-btn:hover {
+        color: var(--accent-color);
+        border-color: var(--accent-color);
+        transform: translateX(-5px);
+        box-shadow: 0 0 20px rgba(12, 235, 235, 0.2);
+      }
+
+      .print-btn {
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        z-index: 100;
+        padding: 0.8rem 1.5rem;
+        background: var(--accent-color);
+        border: none;
+        border-radius: 30px;
+        color: #000;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s;
+        box-shadow: 0 10px 20px rgba(12, 235, 235, 0.2);
+      }
+
+      .print-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(12, 235, 235, 0.4);
+      }
+
+      .resume-header {
+        text-align: left;
+        margin-bottom: 5rem;
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+      }
+
+      .profile-photo {
+        width: 250px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--accent-color);
+        box-shadow: 0 0 30px rgba(12, 235, 235, 0.3);
+      }
+
+      .header-info h1 {
+        font-family: 'Outfit', sans-serif;
+        font-size: clamp(3rem, 6vw, 4.5rem);
+        font-weight: 900;
+        margin-bottom: 0.5rem;
+        line-height: 1.1;
+        background: linear-gradient(90deg, #fff, var(--accent-color));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .contact-banner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 2rem;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .contact-item svg { width: 18px; color: var(--accent-color); }
+
+      .resume-section {
+        margin-bottom: 6rem;
+      }
+
+      .section-divider {
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(90deg, var(--accent-color), transparent);
+        margin-bottom: 3rem;
+        opacity: 0.3;
+      }
+
+      .section-title {
+        font-family: 'Outfit';
+        font-size: 1.8rem;
+        color: var(--accent-color);
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .summary-text {
+        font-size: 1.25rem;
+        line-height: 1.8;
+        color: var(--text-secondary);
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .skill-tag {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        font-weight: 500;
+        color: var(--text-secondary);
+        transition: all 0.3s;
+        text-align: center;
+      }
+
+      .skill-tag:hover {
+        border-color: var(--accent-color);
+        color: var(--accent-color);
+        transform: translateY(-5px);
+        background: rgba(12, 235, 235, 0.05);
+      }
+
+      .project-item {
+        margin-bottom: 3.5rem;
+        padding: 3rem;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 24px;
+        backdrop-filter: blur(15px);
+        transition: all 0.4s;
+      }
+
+      .project-item:hover {
+        border-color: rgba(12, 235, 235, 0.3);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      }
+
+      .project-item h3 {
+        font-family: 'Outfit';
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        color: #fff;
+      }
+
+      .project-item .tech-stack {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .stack-pill {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--accent-color);
+        text-transform: uppercase;
+        background: rgba(12, 235, 235, 0.1);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        border: 1px solid rgba(12, 235, 235, 0.2);
+      }
+
+      .project-desc {
+        line-height: 1.7;
+        color: var(--text-secondary);
+      }
+
+      .education-item {
+        margin-bottom: 2.5rem;
+      }
+
+      .edu-meta {
+        font-size: 0.9rem;
+        color: var(--accent-color);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .edu-name {
+        font-size: 1.3rem;
+        font-family: 'Outfit';
+        margin-bottom: 0.3rem;
+      }
+
+      .language-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .language-item h4 {
+        margin-bottom: 0.8rem;
+        font-family: 'Outfit';
+        font-size: 1.1rem;
+      }
+
+      .progress-bar {
+        height: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--accent-color), var(--secondary-accent));
+        width: 0%;
+        transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      /* --- PRINT STYLES --- */
+      @media print {
+        .back-btn, .print-btn, .canvas-bg, .webgl, #aiOrb, #aiChatWindow {
+          display: none !important;
+        }
+        body {
+          background: #fff !important;
+          color: #000 !important;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+        .resume-container {
+          margin: 0 !important;
+          padding: 1.5cm !important;
+          max-width: none !important;
+        }
+        .resume-header { margin-bottom: 2rem !important; }
+        .resume-header h1 {
+          -webkit-text-fill-color: #000 !important;
+          background: none !important;
+          font-size: 24pt !important;
+          margin-bottom: 0.5rem !important;
+        }
+        .contact-banner { margin-top: 0.5rem !important; gap: 1rem !important; }
+        .section-title {
+          font-size: 14pt !important;
+          margin-bottom: 1rem !important;
+          color: #000 !important;
+          border-bottom: 1.5pt solid #000;
+          padding-bottom: 3pt;
+        }
+        .section-divider { display: none; }
+        .resume-section { margin-bottom: 2rem !important; }
+        .summary-text { font-size: 10pt !important; color: #333 !important; }
+        .skill-tag {
+          padding: 0.4rem 0.8rem !important;
+          font-size: 9pt !important;
+          border: 1px solid #ccc !important;
+          color: #000 !important;
+        }
+        .project-item {
+          padding: 1.5rem !important;
+          margin-bottom: 1.5rem !important;
+          border: 1px solid #eee !important;
+        }
+        .project-item h3 { font-size: 12pt !important; color: #000 !important; }
+        .project-desc { font-size: 9pt !important; color: #444 !important; }
+        .stack-pill { border: 1px solid #ddd !important; color: #666 !important; font-size: 7pt !important; }
+        .edu-meta { font-size: 9pt !important; color: #555 !important; }
+        .edu-name { font-size: 11pt !important; color: #000 !important; }
+      }
+    </style>
+    
+    <!-- Import Maps -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://esm.sh/three@0.160.0",
+          "three/addons/": "https://esm.sh/three@0.160.0/examples/jsm/",
+          "gsap": "https://esm.sh/gsap@3.12.4",
+          "gsap/ScrollTrigger": "https://esm.sh/gsap@3.12.4/ScrollTrigger.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 3D Canvas Background -->
+    <canvas class="webgl" style="position: fixed; top: 0; left: 0; z-index: 1; pointer-events: none; opacity: 0.4;"></canvas>
+
+    <a href="index.html" class="back-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Back to Home
+    </a>
+
+    <button onclick="window.print()" class="print-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Print to PDF
+    </button>
+
+    <div class="resume-container">
+      <header class="resume-header">
+        <img src="Alan Benny.png" alt="Alan Benny" class="profile-photo">
+        <div class="header-info">
+          <h1>ALAN BENNY</h1>
+          <div class="contact-banner">
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Ernakulam, India
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              9778011694
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              alanbennyvellanjiyil@gmail.com
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              Website-alan
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="resume-section">
+        <h2 class="section-title">Professional Summary</h2>
+        <div class="section-divider"></div>
+        <p class="summary-text">
+          Multi-disciplinary Developer and Designer with expertise in building high-performance web applications, premium brand identities, and data-driven marketing strategies. Proficient in **Python/Django** for robust backend architectures and **Vanilla JavaScript** for sophisticated frontend interactions. Certified Digital Marketer with a strong focus on SEO and user conversion optimization.
+        </p>
+      </section>
+
+      <section class="resume-section">
+        <h2 class="section-title">Core Expertise</h2>
+        <div class="section-divider"></div>
+        <div class="skills-grid">
+          <div class="skill-tag">Python & Django</div>
+          <div class="skill-tag">Vanilla JavaScript</div>
+          <div class="skill-tag">UI/UX Design</div>
+          <div class="skill-tag">Digital Marketing</div>
+          <div class="skill-tag">Three.js / GSAP</div>
+          <div class="skill-tag">SQL Databases</div>
+          <div class="skill-tag">Adobe Illustrator</div>
+          <div class="skill-tag">Adobe Photoshop</div>
+          <div class="skill-tag">VBA Automation</div>
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h2 class="section-title">Selected Works</h2>
+        <div class="section-divider"></div>
+        
+        <div class="project-item">
+          <h3>Benny Stores (BSMS)</h3>
+          <div class="tech-stack">
+            <span class="stack-pill">Django</span>
+            <span class="stack-pill">Python</span>
+            <span class="stack-pill">SQLite</span>
+            <span class="stack-pill">Chart.js</span>
+          </div>
+          <p class="project-desc">
+            Architected an advanced POS & Inventory system. Managed full project lifecycle from database micro-architecture to complex data-aggregation scripts, ensuring 100% stock accuracy and real-time financial reconciliation.
+          </p>
+        </div>
+
+        <div class="project-item">
+          <h3>BSCMS</h3>
+          <div class="tech-stack">
+            <span class="stack-pill">Python</span>
+            <span class="stack-pill">Django</span>
+            <span class="stack-pill">Malayalam Localization</span>
+            <span class="stack-pill">SQL</span>
+          </div>
+          <p class="project-desc">
+            Credit Management & Financial Audit System designed to digitize local retail operations. Featured heavy audit logging, regional character support, and high-performance financial health reporting.
+          </p>
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h2 class="section-title">Languages & Certifications</h2>
+        <div class="section-divider"></div>
+        <div class="language-grid">
+          <div class="language-item">
+            <h4>German (Goethe B2)</h4>
+            <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+          </div>
+          <div class="language-item">
+            <h4>English (IELTS 6.0)</h4>
+            <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+          </div>
+          <div class="language-item">
+            <h4>Diploma Digital Marketing</h4>
+            <div class="edu-meta">ABMA Education (Grade A)</div>
+          </div>
+          <div class="language-item">
+            <h4>VBA for Excel</h4>
+            <div class="edu-meta">Advanced Automation Training</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h2 class="section-title">Education</h2>
+        <div class="section-divider"></div>
+        <div class="education-item">
+          <div class="edu-meta">2025 – Present</div>
+          <div class="edu-name">Bachelor of Computer Applications (BCA)</div>
+          <div class="edu-meta">Indira Gandhi National Open University (IGNOU)</div>
+        </div>
+        <div class="education-item">
+          <div class="edu-meta">2024 - ( 6 months )</div>
+          <div class="edu-name">Diploma in Digital Marketing 
+            <span class="edu-meta">- ABMA Education (Grade A)</span></div>
+          <div class="edu-meta">G-Tech Perumbavoor</div>
+        </div>
+        <div class="education-item">
+          <div class="edu-meta">2020 – 2022</div>
+          <div class="edu-name">Higher Secondary Education</div>
+          <div class="edu-meta">Govt H.S.S Pezhakkappilly</div>
+        </div>
+        <div class="education-item">
+          <div class="edu-meta">2020</div>
+          <div class="edu-name">SSLC - ( 10th )</div>
+          <div class="edu-meta">H.S.S Valayanchirangara</div>
+        </div>
+      </section>
+
+    </div>
+
+    <script type="module" src="./main.js"></script>
+    <script>
+      // Trigger progress bar animations on scroll
+      window.addEventListener('load', () => {
+         const fills = document.querySelectorAll('.progress-fill');
+         setTimeout(() => {
+           fills.forEach(fill => {
+             const width = fill.style.width;
+             fill.style.width = '0%';
+             setTimeout(() => { fill.style.width = width; }, 100);
+           });
+         }, 500);
+      });
+    </script>
+  </body>
+</html>
